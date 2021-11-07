@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<data>
+		
+		<variable
+				name="developerModel"
+				type="xyz.markapp.markmvvmtest1.model.DeveloperModel" />
+	</data>
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/white"
+			android:orientation="vertical"
+			android:padding="10dp"
+			tools:context=".DisplayUserDetailActivity">
+		
+		<ImageView
+				android:id="@+id/img2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:minHeight="150dp"
+				android:scaleType="fitCenter"
+				android:src="@mipmap/ic_launcher_round"
+				app:imageUrl="@{developerModel.avatar_url}" />
+		
+		<TextView
+				android:id="@+id/tv_name1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="Username"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				app:login_name="@{developerModel.login}" />
+		
+		<View
+				android:layout_width="match_parent"
+				android:layout_height="3dp"
+				android:layout_margin="10dp"
+				android:background="#aa686868"
+				android:padding="20dp" />
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp"
+				android:orientation="horizontal"
+				android:paddingLeft="40dp">
+			
+			<ImageView
+					
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:padding="10dp"
+					android:src="@drawable/perm_group_personal_info" />
+			
+			<TextView
+					android:id="@+id/tv_name2"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical"
+					android:gravity="left"
+					android:text="Username_full"
+					app:fullname="@{developerModel}" />
+		
+		</LinearLayout>
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp"
+				android:orientation="horizontal"
+				android:paddingLeft="40dp">
+			
+			<ImageView
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:padding="10dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/ic_perm_group_location" />
+			
+			<TextView
+					android:id="@+id/tv_location"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical"
+					android:gravity="left"
+					android:text="location"
+					app:location="@{developerModel}" />
+		
+		</LinearLayout>
+		
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp"
+				android:orientation="horizontal"
+				android:paddingLeft="40dp">
+			
+			<ImageView
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:padding="10dp"
+					android:src="@drawable/ic_menu_attachment" />
+			
+			<TextView
+					android:id="@+id/tv_link"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical"
+					android:gravity="left"
+					android:text="link"
+					app:blog="@{developerModel}" />
+		
+		</LinearLayout>
+	</LinearLayout>
+</layout>

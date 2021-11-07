@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto">
+	
+	<data>
+		<variable
+				name="developerModel"
+				type="xyz.markapp.markmvvmtest1.model.DeveloperModel" />
+	
+	</data>
+	
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:padding="10dp">
+		
+		<ImageView
+				android:id="@+id/img1"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:layout_weight="1"
+				android:scaleType="fitCenter"
+				android:src="@mipmap/ic_launcher_round"
+				app:imageUrl="@{developerModel.avatar_url}" />
+		
+		<TextView
+				android:id="@+id/tv1"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="2"
+				app:developerModel="@{developerModel}"
+				app:login_name="@{developerModel.login}"
+				app:no_name="@{developerModel.id}" />
+	
+	</LinearLayout>
+</layout>

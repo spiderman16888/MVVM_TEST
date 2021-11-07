@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools">
+	
+	<data>
+		
+		<variable
+				name="userModel"
+				type="xyz.markapp.markmvvmtest1.model.User" />
+	</data>
+	
+	<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			tools:context=".ui.mine.MineFragment">
+		
+		<TextView
+				android:id="@+id/text_home"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical|center_horizontal"
+				android:layout_marginStart="8dp"
+				android:layout_marginTop="8dp"
+				android:layout_marginEnd="8dp"
+				android:textAlignment="center"
+				android:textSize="20sp" />
+		
+		<ImageView
+				android:id="@+id/img1"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_centerInParent="true"
+				android:layout_gravity="left|top"
+				android:minHeight="150dp"
+				android:scaleType="fitStart"
+				android:src="@drawable/pexels747964" />
+		
+		<ImageView
+				android:id="@+id/img2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:layout_gravity="left"
+				android:minHeight="150dp"
+				android:scaleType="fitStart"
+				android:src="@mipmap/ic_launcher_round"
+				app:imageUrl="@{userModel.avatar_url}" />
+		
+		<TextView
+				android:id="@+id/tv_name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/img2"
+				android:paddingLeft="20dp"
+				android:text="login name"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textStyle="bold"
+				app:loginname="@{userModel.login}" />
+		
+		<TextView
+				android:id="@+id/tv_login"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/tv_name"
+				android:paddingLeft="20dp"
+				android:text="your login"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				app:name="@{userModel.name}" />
+		
+		<TextView
+				android:id="@+id/tv_followers"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/tv_login"
+				android:paddingLeft="20dp"
+				android:text="followers"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				app:followers="@{userModel}" />
+		
+		<TextView
+				android:id="@+id/tv_email"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/tv_followers"
+				android:paddingLeft="20dp"
+				android:text="email"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				app:email="@{userModel.email}" />
+	
+	</RelativeLayout>
+</layout>
